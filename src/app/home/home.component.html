@@ -1,0 +1,17 @@
+<app-banner src="assets/imagens/banner-homepage.png" alt="Banner para a aplicação Jornada"></app-banner>
+<app-container>
+    <app-form-busca (realizarBusca)="navegarParaBusca($event)"></app-form-busca>
+    <h2>Promoções</h2>
+    <div class="card-wrapper">
+        <div *ngFor="let promocao of promocoes">
+        <app-card-busca [promo] = 'promocao' ></app-card-busca>
+        </div>
+
+    </div>
+    <h2>Depoimentos</h2>
+    <div  class="cards-depoimentos">
+        <div *ngFor="let depoimento of depoimentos">
+            <app-card-depoimentos [depoimentos] = 'depoimento'></app-card-depoimentos>
+        </div>
+    </div>
+</app-container>

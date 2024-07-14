@@ -1,0 +1,16 @@
+mat-form-field {
+    width: 100%;
+  }
+  
+.linha-um {
+      display: flex;
+      column-gap: 24px;
+  }
+.linha-dois {
+      display: flex;
+      column-gap: 24px;
+  }
+
+.marginTopNegativa{
+    margin-top: -32px;
+}

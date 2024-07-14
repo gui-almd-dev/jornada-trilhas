@@ -1,0 +1,29 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+
+  button {
+    margin: 0 16px;
+  }
+
+  .login {
+    color: #673ab7;
+    border-color: #673ab7;
+  }
+
+  .button_home{
+    margin: 0;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+  }
+
+  .mat-toolbar {
+    background-color: black;
+    color: white;
+    padding: 0 256px;
+  }
+
+  .mat-mdc-outlined-button:not(:disabled) {
+    border-color: white;
+  } 

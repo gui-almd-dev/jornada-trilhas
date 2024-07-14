@@ -1,0 +1,45 @@
+.form-busca {
+    margin: 40px 0;
+    display: block;
+}
+.form-busca .flex-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 16px 0; 
+    }
+.form-busca .input-container {
+      margin-bottom: -1.25em;
+    }
+.form-busca .mat-button-toggle-checked {
+      background-color: #F7F2FA;
+    }
+.form-busca h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+.hint {
+    position: relative;
+    top: -67px;
+    background-color: rgb(245, 245, 245);
+    padding: 0 5px;
+}
+
+.toogle {
+    background-color: rgb(245, 245, 245);
+}
+
+mat-button-toggle:checked {
+    /* background-color: #dfc6c6a6; */
+    background-color: red;
+}
+
+mat-chip .inner {
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+    }
+

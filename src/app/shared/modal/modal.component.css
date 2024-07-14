@@ -1,0 +1,56 @@
+.modal {
+    border: 1px solid #1D1B20;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    padding-bottom: 0px;
+}
+
+.modal h1 {
+      font-size: 32px;
+      padding: 12px;
+      margin-left: 10px;
+}
+.modal .selecao-idade {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 40px
+}
+
+
+.modal .selecao-categoria {
+      margin-top: 0px;
+      color: #1D1B20;
+      justify-content: flex-start;
+      display: flex;
+}
+
+.selecao-categoria ul {
+    padding: 0;
+}
+.selecao-categoria li {
+    justify-content: flex-start;
+    margin-top: 8px;
+}
+
+.modal .modal-actions {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+}
+      
+.modal .modal-actions button {
+        margin: 0 8px;
+        width: 100%;
+      }
+  
+  
+li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

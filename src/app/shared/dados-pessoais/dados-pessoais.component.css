@@ -1,0 +1,23 @@
+mat-form-field {
+  width: 100%;
+}
+
+.linha_dois {
+    display: flex;
+    column-gap: 24px;
+}
+.linha_tres {
+    display: flex;
+    column-gap: 24px;
+}
+
+.linha_quatro {
+    display: flex;
+    column-gap: 24px;
+}
+
+mat-radio-group div{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

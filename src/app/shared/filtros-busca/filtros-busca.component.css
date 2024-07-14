@@ -1,0 +1,90 @@
+
+.cardFiltros {
+    display: grid;
+    column-gap: 32px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto auto;
+    grid-template-areas:
+      "headerEsq headerDir "
+      "bodyEsq  bodyDir"
+      "footerEsq footerDir";
+  }
+  
+  .headerFiltrosEsq {
+    grid-area: headerEsq;
+  }
+  .headerFiltrosDir {
+    grid-area: headerDir;
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Roboto';
+    background-color: rgba(236, 230, 240, 1);
+    padding: 10px;
+    line-height: 40px;
+    font-weight: 500;
+    margin: 0;
+  }
+  .bodyFiltrosEsq {
+    grid-area: bodyEsq;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .bodyFiltrosDir {
+    grid-area: bodyDir;
+    padding: 16px 10px 0;
+  }
+  .footerFiltrosEsq {
+    grid-area: footerEsq;
+    display: flex;
+  }
+  .footerFiltrosDir {
+    grid-area: footerDir;
+  }
+  
+  .origem{
+    background: rgba(247, 242, 250, 1);
+    text-align: center;
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  .text-origem {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .text-total{
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .data{
+    padding: 8px;
+    width: 20%;
+    margin: 0px;
+    border-radius: 8px;
+    background: rgba(247, 242, 250, 1);
+    text-align: center;
+  }
+
+  .ida{
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    width: 20%; 
+    margin: 0 24px 0 0px;
+  }
+
+  .volta{
+    width: 20%;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }

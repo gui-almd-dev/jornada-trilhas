@@ -1,0 +1,41 @@
+<app-banner
+  src="assets/imagens/banner-cadastro.png"
+  alt="Banner da tela de login"
+></app-banner>
+
+<section
+  class="cadastro-component"
+  style="max-width: 600px; margin-bottom: 40px"
+>
+  <mat-card class="cadastro">
+    <mat-card-header
+      style="display: flex; justify-content: center; margin-bottom: 24px"
+    >
+      <mat-card-title style="font-size: 32px">Crie a sua conta</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="cadastroForm">
+      <app-dados-pessoais [form]="cadastroForm"></app-dados-pessoais>
+      <app-dados-de-acesso
+        [form]="cadastroForm"
+        [marginTopNegativa]="true"
+      ></app-dados-de-acesso>
+
+      <mat-checkbox
+        class="example-margin"
+        (change)="aceitarTermos($event.checked)"
+        >Li e aceito os termos e condições deste cadastro.</mat-checkbox
+      >
+      <mat-card-actions>
+        <button
+          style="margin-bottom: 16px"
+          mat-flat-button
+          color="primary"
+          (click)="cadastrar()"
+          [disabled]="cadastroForm.invalid || !aceiteTermos"
+        >
+          CRIAR MINHA CONTA
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</section>

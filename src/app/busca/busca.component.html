@@ -1,0 +1,20 @@
+<div class="busca-page">
+    <app-banner src="../../../assets/imagens/InterfaceDesktop/Imagens/5Bannerpesquisa.png" alt="" /> 
+    <app-container style="min-height: 400px;">
+            <app-form-busca (realizarBusca)="busca($event)"></app-form-busca>
+            
+            <section class="conteudo">
+                <aside>
+                    <app-filtros-complementares (realizarBusca)="busca($event)"></app-filtros-complementares>
+                </aside>
+                <div style="display: flex; flex-direction: column;">
+                    <div class="destaques">
+                        <app-passagens-destaques [destaques]="destaques" [exibirSection]="exibirDestaques" style="width: 100%;"></app-passagens-destaques>
+                    </div>
+                    <div class="passagens">
+                        <app-filtros-busca *ngFor="let passagem of passagens" [passagem]="passagem"></app-filtros-busca>
+                    </div>
+                </div>
+            </section>
+    </app-container>
+</div>

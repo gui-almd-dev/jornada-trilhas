@@ -1,0 +1,29 @@
+footer {
+    display: flex;
+    align-items: center;
+    padding: 60px 256px;
+    background-color: black;
+    color: white;
+    justify-content: space-between;
+    font-size: 16PX;
+}
+
+.horarios {
+    justify-content: flex-start;
+}
+
+.redes {
+    justify-content: center;
+}
+
+.icones{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 16px;
+}
+
+.horarios > img {
+    transform: scale(0.5);
+    margin-left: -95px;
+    margin-bottom: -15px;
+}

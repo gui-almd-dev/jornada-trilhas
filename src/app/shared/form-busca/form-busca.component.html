@@ -1,0 +1,87 @@
+<app-card variant="secondary" class="form-busca">
+  <form [formGroup]="formBuscaService.formBusca" (ngSubmit)="buscar()">
+    <h2>Passagens</h2>
+    <div class="flex-container">
+      <mat-button-toggle-group
+        style="border: solid 1px rgb(0 0 0 / 32%)"
+        aria-label="Tipo de passagem"
+        formControlName="somenteIda"
+      >
+        <mat-button-toggle [value]="false" class="toogle">
+          <mat-icon *ngIf="!formBuscaService.formBusca.get('somenteIda')?.value"
+            >check</mat-icon
+          >
+          IDA E VOLTA
+        </mat-button-toggle>
+        <mat-button-toggle
+          [value]="true"
+          class="toogle"
+          style="border-left: solid 1px rgb(0 0 0 / 32%)"
+        >
+          <mat-icon *ngIf="formBuscaService.formBusca.get('somenteIda')?.value"
+            >check</mat-icon
+          >
+          SOMENTE IDA
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      <mat-chip (click)="formBuscaService.openDialog()">
+        <div class="inner">
+          <mat-icon>check</mat-icon> {{ this.formBuscaService.getDescricaoPassageiros() }}
+        </div>
+      </mat-chip>
+      <mat-chip (click)="formBuscaService.openDialog()">
+        <div class="inner">
+          <mat-icon>check</mat-icon> {{ this.formBuscaService.formBusca.get('tipo')?.value }}
+        </div>
+      </mat-chip>
+    </div>
+    <div class="flex-container">
+      <app-dropdown-uf
+        label="Origem"
+        matPrefix="flight_takeoff"
+        placeholder="Origem"
+        [control]="formBuscaService.obterControle('origem')"
+        style="max-width: 230px;"
+      >
+      </app-dropdown-uf>
+      <button mat-icon-button (click)="inverterOrigemDestino()">
+        <mat-icon>sync_alt</mat-icon>
+      </button>
+      <app-dropdown-uf
+        label="Destino"
+        matPrefix="flight_land"
+        placeholder="Destino"
+        [control]="formBuscaService.obterControle('destino')"
+        style="max-width: 230px;"
+      >
+      </app-dropdown-uf>
+      <!-- <mat-form-field class="input-container" appearance="outline">
+                <mat-label>Destino</mat-label>
+                <input matInput placeholder="Destino">
+                <mat-icon matPrefix>flight_land</mat-icon>
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field> -->
+      <mat-form-field class="input-container" appearance="outline">
+        <mat-label>Selecione</mat-label>
+        <input matInput [matDatepicker]="picker1" formControlName="dataIda" />
+        <mat-hint class="hint">Data de ida</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker1"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="input-container" appearance="outline">
+        <mat-label>Selecione</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dataVolta" />
+        <mat-hint class="hint">Data de volta</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <button mat-flat-button color="primary" (click)="buscar()">BUSCAR</button>
+    </div>
+  </form>
+</app-card>
