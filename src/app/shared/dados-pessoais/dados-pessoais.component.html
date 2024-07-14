@@ -1,0 +1,65 @@
+<mat-card-content [formGroup]="form">
+    <div class="linha_um">
+            <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input formControlName="nome" type="name" matInput placeholder="Digite seu nome">
+            <mat-error *ngIf="form.get('nome')?.errors?.['required']">Nome é obrigatório</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="linha_dois">
+        <mat-form-field appearance="outline" style="width: 50%;">
+            <mat-label>Data de nascimento</mat-label>
+            <input [matDatepicker]="picker" formControlName="dataNascimento" matInput placeholder="Digite a sua data de nascimento">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="form.get('dataNascimento')?.errors?.['required']">Data de nascimento é obrigatória</mat-error>
+        </mat-form-field>
+        <!-- <mat-form-field appearance="outline">
+            <mat-label>Gênero</mat-label>
+            <input formControlName="dataNascimento" matInput placeholder="Digite a sua data de nascimento">
+        </mat-form-field> -->
+        <div style="width: 50%; display: flex; flex-direction: column;">
+            <div>Gênero</div>
+            <mat-radio-group  formControlName="genero" style="display: grid; grid-template-columns: 40% 20% 40%; justify-content: space-between;">
+                <div>
+                    <mat-radio-button value="Feminino"></mat-radio-button>
+                    <p style="font-size: 10px; padding: 0; margin-top: -5px;" >Feminino</p>
+                </div>
+                <div  >
+                    <mat-radio-button value="Masculino"></mat-radio-button>
+                    <p style="font-size: 10px; padding: 0; margin-top: -5px;" >Masculino</p>
+                </div>
+                <div  >
+                    <mat-radio-button value="nda"></mat-radio-button>
+                    <p style="font-size: 10px; padding: 0; margin-top: -5px;" >Prefiro não informar</p>
+                </div>
+            </mat-radio-group>
+          </div>
+    </div>
+    <div class="linha_tres">
+        <mat-form-field appearance="outline">
+            <mat-label>CPF</mat-label>
+            <input  formControlName="cpf" matInput placeholder="Digite seu cpf">
+            <mat-error *ngIf="form.get('cpf')?.errors?.['required']">Cpf é obrigatório</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Telefone</mat-label>
+            <input  formControlName="telefone" matInput placeholder="Digite seu telefone">
+            <mat-error *ngIf="form.get('telefone')?.errors?.['required']">Telefone é obrigatório</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="linha_quatro">
+        <mat-form-field appearance="outline" style="width: 50%;">
+            <mat-label>Cidade</mat-label>
+            <input formControlName="cidade" matInput placeholder="Digite a sua cidade">
+            <mat-error *ngIf="form.get('cidade')?.errors?.['required']">Cidade é obrigatória</mat-error>
+        </mat-form-field>
+
+        <app-dropdown-uf
+        label="Estado"
+        placeholder="Selecione o seu estado"
+        [control]="obterControle('estado')"
+        style="width: 50%;"
+        ></app-dropdown-uf>
+    </div>
+</mat-card-content>

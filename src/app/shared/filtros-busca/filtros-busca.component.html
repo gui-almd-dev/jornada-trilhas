@@ -1,0 +1,61 @@
+<mat-card class="card">
+  <mat-card-content class="cardFiltros" *ngIf="passagem">
+    <h1 class="headerFiltrosEsq">Ida e volta</h1>
+    <div class="bodyFiltrosEsq">
+      <mat-divider></mat-divider>
+      <div style="display: flex; width: 100%; column-gap: 8px">
+        <div style="width: 50%">
+          <p class="text-origem">Origem</p>
+          <p class="origem">{{ passagem.origem.nome }} ({{ passagem.origem.sigla }})</p>
+        </div>
+        <div style="width: 50%">
+          <p class="text-origem">Destino</p>
+          <p class="origem">{{ passagem.destino.nome }} ({{ passagem.destino.sigla }})</p>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+
+      <div style="display: flex; width: 100%">
+        <div class="ida"><p>Ida</p></div>
+        <div class="volta"><p>Volta</p></div>
+      </div>
+    </div>
+    <div class="footerFiltrosEsq">
+      <p class="data" style="margin-right: 8px">{{ passagem.dataIda | date:'dd/MM' }}</p>
+      <p class="data">{{ passagem.dataVolta | date:'dd/MM' }}</p>
+    </div>
+
+    <h1 class="headerFiltrosDir">{{ passagem.total | currency:'BRL' }}</h1>
+    <div class="bodyFiltrosDir">
+      <div style="display: flex; justify-content: space-between">
+        <p>{{ passagem.orcamento[0].descricao }}</p>
+        <p>{{ passagem.orcamento[0].preco| currency:'BRL' }}</p>
+      </div>
+      <div style="display: flex; justify-content: space-between">
+        <p>{{ passagem.orcamento[0].taxaEmbarque | currency:'BRL' }}</p>
+        <p>{{ passagem.orcamento[0].total | currency:'BRL' }}</p>
+      </div>
+      <mat-divider></mat-divider>
+      <div style="display: flex; justify-content: space-between">
+        <p class="text-total">Total</p>
+        <p class="text-total">{{ passagem.orcamento[0].total | currency : "BRL" }}</p>
+      </div>
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          text-align: center;
+        "
+      >
+        <p style="width: 33%">10% de desconto no Pix</p>
+        <p style="width: 34%">ou</p>
+        <p style="width: 33%">12x no cartão de crédito</p>
+      </div>
+    </div>
+    <div style="width: 100%" class="footerFiltrosDir">
+      <button mat-flat-button color="primary" style="width: 100%">
+        Comprar
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

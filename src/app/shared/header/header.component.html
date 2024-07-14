@@ -1,0 +1,23 @@
+<header class="app-header">  
+  <mat-toolbar>
+    <button class="button_home" (click)=" irParaPaginaInicial()">
+      <img src="assets/imagens/logo.png" alt="Logo da aplicação Jorndada Trilhas">
+    </button>
+    <span class="spacer"></span>
+    <div class="links-toobar">
+      <button mat-button>Vender milhas</button>
+      <button mat-button>Sobre</button>
+
+      <ng-container *ngIf="user$ | async as cadastro, else login">
+        <button (click)=" irParaPaginaPerfil()">
+          <img src="assets/icones/perfil1.png" alt="Ícone da pessoa usuária" style="margin-bottom: -12px;">
+        </button>
+        <button mat-stroked-button (click)="logout()">Sair</button>
+      </ng-container>
+      <ng-template #login>
+        <button mat-raised-button color="primary" (click)="irParaPaginaCadastro()" >CADASTRE-SE</button>
+        <button (click)="irParaPaginaLogin()" mat-stroked-button style="color: #673ab7; border-color: #673ab7;">LOGIN</button>   
+      </ng-template>
+    </div>    
+  </mat-toolbar>
+</header>

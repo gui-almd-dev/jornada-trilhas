@@ -1,0 +1,48 @@
+<app-banner
+  src="assets/imagens/banner-perfil.png"
+  alt="Banner da tela de login"
+></app-banner>
+
+<section
+  class="cadastro-component"
+  style="max-width: 600px; margin-bottom: 40px"
+>
+  <mat-card class="cadastro">
+      <div style="    padding-right: 16px;
+      display: flex;
+      justify-content: space-between;;">
+    <mat-card-header style="display: flex; justify-content: start;">
+            <mat-card-title style="font-size: 32px; display: flex;
+      justify-content: space-between;">Olá, {{ nome }}! 
+        </mat-card-title>
+        
+        <mat-card-title style="font-size: 24px; margin-top: 40px"
+        >Dados Pessoais</mat-card-title
+        >
+    </mat-card-header>
+        <button mat-stroked-button style="margin-top: 16px;" (click)="deslogar()"> 
+            <mat-icon style="width: 22px;" aria-label="Example home icon" fontIcon="logout"></mat-icon>
+            Deslogar</button>
+    </div>
+    <form [formGroup]="cadastroForm">
+      <app-dados-pessoais [form]="cadastroForm"></app-dados-pessoais>
+      <mat-divider style="margin-bottom: 24px;"></mat-divider>
+      <mat-card-title style="font-size: 24px; margin: 0 0 32px 16px"
+        >Dados Pessoais</mat-card-title
+      >
+
+      <app-dados-de-acesso
+        [form]="cadastroForm"
+        [marginTopNegativa]="true"
+      ></app-dados-de-acesso>
+
+     
+      <mat-card-actions>
+        <button  
+        (click)="atualizar()"
+        [disabled]="cadastroForm.invalid"
+        mat-flat-button color="primary" style="width: 100%; margin-bottom: 32px;">Atualizar</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</section>

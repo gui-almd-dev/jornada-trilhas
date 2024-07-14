@@ -1,0 +1,16 @@
+<ul>
+    <li><strong> {{ tipoCliente }} </strong></li>
+    <li>{{ descricao }}</li>
+    <li>
+      <button class="decremento" mat-mini-fab color="gray" (click)="decrementar()">
+        <img
+          src="assets/icones/do_not_disturb_on.png"
+          alt="Operador de subitração"
+        />
+      </button>
+      <span>{{ value }}</span>
+      <button class="incremento" mat-mini-fab color="gray" (click)="incrementar()">
+        <img src="assets/icones/add_circle.png" alt="Operador de adição" />
+      </button>
+    </li>
+  </ul>

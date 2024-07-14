@@ -1,0 +1,38 @@
+<section *ngIf="destaques && exibirSection===true">
+  <div class="menorPreco">
+    <h1>Menor Preço</h1>
+    <h1 class="preco">
+      R$
+      {{
+        destaques.menorValor.precoIda +
+          destaques.menorValor.precoVolta +
+          destaques.menorValor.taxaEmbarque
+      }}
+    </h1>
+    <p>{{ destaques.menorValor.tempoVoo }}h de viagem</p>
+  </div>
+  <div class="recomendada">
+    <h1>Recomendado</h1>
+    <h1 class="preco">
+      R$
+      {{
+        destaques.recomendada.precoIda +
+          destaques.recomendada.precoVolta +
+          destaques.recomendada.taxaEmbarque
+      }}
+    </h1>
+    <p>{{ destaques.recomendada.tempoVoo }}h de viagem</p>
+  </div>
+  <div class="menorTempo">
+    <h1>Menor Tempo</h1>
+    <h1 class="preco">
+      R$
+      {{
+        destaques.menorTempo.precoIda +
+          destaques.menorTempo.precoVolta +
+          destaques.menorTempo.taxaEmbarque
+      }}
+    </h1>
+    <p>{{ destaques.menorTempo.tempoVoo }}h de viagem</p>
+  </div>
+</section>

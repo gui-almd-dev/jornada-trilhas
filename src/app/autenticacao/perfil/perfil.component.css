@@ -1,0 +1,25 @@
+
+.cadastro-component {
+    max-width: 50%;
+    min-height: 74%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+  
+.cadastro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 68px;
+      padding-bottom: 32px;
+      padding: 0 8px;
+    }
+
+mat-card-actions{
+    justify-content: center;
+}
+
+.example-margin {
+  margin:-24px 0px 24px 24px
+}

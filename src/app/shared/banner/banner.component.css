@@ -1,0 +1,17 @@
+figure {
+    margin: 0;
+    height: auto;
+}
+
+img {
+    width: 100vw;    
+}
+
+.cobrir_linha {
+    width: 100vw;
+    height: 5px;
+    background-color: white;
+    box-shadow: 0 -8px 0px 2px #fff;
+    z-index: 99;
+    position: absolute;
+}

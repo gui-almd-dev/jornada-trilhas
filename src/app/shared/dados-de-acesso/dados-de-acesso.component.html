@@ -1,0 +1,30 @@
+<mat-card-content [formGroup]="form" [ngClass]="aplicarMargenTopNegativa()">
+    <div class="linha-um">
+        <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input formControlName="email" type="email" matInput placeholder="Digite seu email">
+            <mat-error *ngIf="form.get('email')?.errors?.['required']">E-mail obrigatório</mat-error>
+            <mat-error *ngIf="form.get('email')?.errors?.['email']">Formato de email inválido</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Confirmar e-mail</mat-label>
+            <input formControlName="confirma_email" type="email" matInput placeholder="Digite seu email novamente">
+            <mat-error *ngIf="form.get('confirma_emaill')?.errors?.['required']">E-mail obrigatório</mat-error>
+            <mat-error *ngIf="form.get('confirma_email')?.errors?.['equalTo']">Emails não coincidem</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="linha-dois">
+        <mat-form-field appearance="outline">
+            <mat-label>Senha</mat-label>
+            <input type="password" formControlName="senha" matInput placeholder="Digite sua senha">
+            <mat-error *ngIf="form.get('senha')?.errors?.['required']">Senha é obrigatória </mat-error>
+            <mat-error *ngIf="!form.get('senha')?.errors?.['required'] && form.get('senha')?.errors?.['minlength']">Senha Deve Conter pelo 3 caracteres </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Confirmar senha</mat-label>
+            <input type="password" formControlName="confirma_senha" matInput placeholder="Repita sua senha">
+            <mat-error *ngIf="form.get('confirma_senha')?.errors?.['required']">Senha é obrigatória </mat-error>
+            <mat-error *ngIf="form.get('confirma_senha')?.errors?.['equalTo']">Senhas não coincidem </mat-error>
+        </mat-form-field>
+    </div>
+</mat-card-content>

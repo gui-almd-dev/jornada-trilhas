@@ -1,0 +1,44 @@
+<section class="modal">
+  <h1 mat-dialog-title>Viajante</h1>
+  <mat-dialog-content class="content">
+    <div class="selecao-idade">
+      <app-seletor-passageiro descricao = "(Acima de 12 anos)" tipoCliente = "Adultos" 
+      [formControl]="formBuscaService.obterControle('adultos')"></app-seletor-passageiro>
+      
+      <app-seletor-passageiro descricao = "(Entre 02 a 11 anos)" tipoCliente = "Crianças"
+      [formControl]="formBuscaService.obterControle('criancas')"></app-seletor-passageiro>
+
+      <app-seletor-passageiro descricao = "(Até 2 anos)" tipoCliente = "Bebês" 
+      [formControl]="formBuscaService.obterControle('bebes')"></app-seletor-passageiro>
+    </div>
+    <div class="selecao-categoria">
+      <ul>
+        <li><strong>Caterogia</strong></li>
+        <li>
+          <mat-chip-listbox aria-label="Seleção de passagens">
+            <mat-chip-option 
+            value="Econômica"
+            [selected]="formBuscaService.formBusca.get('tipo')?.value === 'Econômica'"
+            (selectionChange)="formBuscaService.alterarTipo($event, 'Econômica')"
+            >Econômica</mat-chip-option>
+            <mat-chip-option value="Executiva"
+            [selected]="formBuscaService.formBusca.get('tipo')?.value === 'Executiva'"
+            (selectionChange)="formBuscaService.alterarTipo($event, 'Executiva')"
+            >Executiva</mat-chip-option>
+          </mat-chip-listbox>
+        </li>
+      </ul>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions style="padding: 0 0 20px 0">
+    <button
+      mat-flat-button
+      mat-dialog-close
+      color="primary"
+      style="width: 100%; margin: 0 24px; height: 42px; font-size: 16px"
+    >
+      BUSCAR
+    </button>
+  </mat-dialog-actions>
+</section>
